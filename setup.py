@@ -122,7 +122,8 @@ install_requires = [
         'h5py',
         'scipy',
         'six',
-        'hdf5plugin'
+        'hdf5plugin',
+        'pybind11'
 ]
 
 extras_require = {

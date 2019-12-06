@@ -11,6 +11,7 @@ import six
 from astropy.coordinates import Angle
 
 import blimpy.io.sigproc
+import blimpy_read_module as bound_reader
 
 # import pdb;# pdb.set_trace()
 
@@ -597,30 +598,24 @@ class FilReader(Reader):
         n_ifs   = self.header[b'nifs']
 
         # Load binary data
-        f = open(self.filename, 'rb')
-        f.seek(int(self.idx_data))
+        #f = open(self.filename, 'rb')
+        #f.seek(int(self.idx_data))
 
         # now check to see how many integrations requested
         n_ints = self.t_stop - self.t_start
 
-        # Seek to first integration
-        f.seek(int(self.t_start * self._n_bytes  * n_ifs * n_chans), 1)
+	# You have to remember to get rid of this later
+        print('Get ready for this: they\'re moving it.', bound_reader.add(3, 6))
+		
+        print(self._d_type, self.t_start)
 
-        #Loading  data
-        self.data = np.zeros((n_ints, n_ifs, n_chans_selected), dtype=self._d_type)
+        print(self.filename, n_chans, n_ifs, n_ints, n_chans_selected, self.chan_start_idx, self.chan_stop_idx, self._n_bytes)
 
-        for ii in range(n_ints):
-            for jj in range(n_ifs):
-                f.seek(int(self._n_bytes  * self.chan_start_idx), 1) # 1 = from current location
-                dd = np.fromfile(f, count=n_chans_selected, dtype=self._d_type)
+        self.data = bound_reader.read_sigproc_data(self.filename, self.idx_data, n_chans, n_ifs, n_ints, n_chans_selected, self.chan_start_idx, self.chan_stop_idx, self._n_bytes)
 
-                # Reverse array if frequency axis is flipped
-#                     if self.header[b'foff'] < 0:
-#                         dd = dd[::-1]
+        print('File read')
 
-                self.data[ii, jj] = dd
-
-                f.seek(int(self._n_bytes  * (n_chans - self.chan_stop_idx)), 1)  # Seek to start of next block
+        print(self.data)
 
     def _find_blob_start(self):
         """Find first blob from selection.
