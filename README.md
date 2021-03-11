@@ -3,55 +3,93 @@
 [![codecov](https://codecov.io/gh/UCBerkeleySETI/blimpy/branch/master/graph/badge.svg)](https://codecov.io/gh/UCBerkeleySETI/blimpy)
  [![JOSS status](http://joss.theoj.org/papers/e58ef21f0a924041bf9438fd75f8aed0/status.svg)](http://joss.theoj.org/papers/e58ef21f0a924041bf9438fd75f8aed0)
 
-## Breakthrough Listen I/O Methods for Python.
+# Breakthrough Listen I/O Methods for Python
+
+## Introduction
+This README file details the installation instructions for Breakthrough Listen I/O Methods for Python (blimpy). Developers should also read [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md) and [CONTRIBUTING](./CONTRIBUTING.md).
 
 ### Filterbank + Raw file readers
+This repository contains Python 2/3 readers for interacting with [Sigproc filterbank](http://sigproc.sourceforge.net/sigproc.pdf) (.fil), HDF5 (.h5) and [guppi raw](https://baseband.readthedocs.io/en/stable/guppi/) (.raw) files, as used in the [Breakthrough Listen](https://seti.berkeley.edu) search for intelligent life.
 
-This repository contains Python 2/3 readers for interacting with [Sigproc filterbank](http://sigproc.sourceforge.net/sigproc.pdf) (.fil), HDF5 (.h5) and [guppi raw](https://baseband.readthedocs.io/en/stable/guppi/) (.raw) files,
-as used in the [Breakthrough Listen](https://seti.berkeley.edu) search for intelligent life.
+## Installation
 
+### System Dependencies
+The installation can fail if a system dependency is not installed. Please refer to the [dependencies.txt](./dependencies.txt) file for a list of system dependencies.
 
-### Installation
-
-#### System Dependencies
-Sometimes the `pip` installation can fail if a system dependency is not installed. To fix this, make sure you have `curl` and install the required system dependencies with the command bellow:
-
-##### Debian/Ubuntu
+#### Debian/Ubuntu
+For Debian/Ubuntu systems, make sure that `curl` installed and you have `sudo` access. Install the required system dependencies with the follwoing command:
 ```
 curl https://raw.githubusercontent.com/UCBerkeleySETI/blimpy/master/dependencies.txt | xargs -n 1 sudo apt install --no-install-recommends -y
 ```
 
-#### Manual Installation
+### Python Dependencies
+blimpy requires `numpy`, `h5py`, `astropy`, `scipy`, `hdf5plugin`and `matplotlib` packages and will attempt to automatically install them.
 
-The latest release can be installed via pip directly from this repository:
-
-```
-python3 -m pip install -U git+https://github.com/UCBerkeleySETI/blimpy
-```
-
-Or, the latest version of the development code can be installed from the github [repo](https://github.com/UCBerkeleySETI/blimpy) and then run `python setup.py install` or `pip install .` (with sudo if required), or by using the following terminal command:
-
-```
-python3 -m pip install -U https://github.com/UCBerkeleySETI/blimpy/tarball/master
-```
-
-To install everything required to run the unit tests, run:
-
-```
-python3 -m pip install -e .[full]
-```
-
-You will need `numpy`, `h5py`, `astropy`, `scipy`, and `matplotlib` as dependencies. A `pip install` should pull in numpy, h5py, and astropy, but you may still need to install scipy and matplotlib separately.
-To interact with compressed files, you'll need the `hdf5plugin` package too.
-
-Note that h5py generally needs to be installed in this way:
-
+Please note when undertaking an installation of h5py, it generally needs to be installed using the following:
 ```
 $ python3 -m pip install --no-binary=h5py h5py
 ```
 
-### Command line utilities
+### PyPI Installation
 
+#### User based installation
+```
+python3 -m pip install blimpy --user
+```
+
+#### System wide installation
+```
+sudo python3 -m pip install blimpy
+```
+
+#### (Optional) Install the latest release from the repository
+The latest release can be installed via `pip` directly from this repository:
+```
+python3 -m pip install -U git+https://github.com/UCBerkeleySETI/blimpy
+```
+
+### Developer Installation
+The latest version of the development code can be installed by cloning the github [repo](https://github.com/UCBerkeleySETI/blimpy) and then run:
+
+#### User based installation
+```
+python3 setup.py install --user
+```
+
+#### System wide installation
+```
+sudo python3 setup.py install
+```
+
+#### (Optional) Install using PyPI
+```
+python3 -m pip install -U https://github.com/UCBerkeleySETI/blimpy/tarball/master
+```
+
+### Unit tests
+To install packages needed to run the unit tests, use the following:
+
+#### User based installation
+```
+python3 -m pip install --user --no-use-pep517 -e '.[full]'
+```
+
+#### System wide installation
+```
+sudo python3 -m pip install -e '.[full]'
+```
+
+## Using blimpy inside Docker
+The blimpy Docker images are pushed to a public repository after each successful build on Travis.
+
+If you have Docker installed, you can run the following commands to pull our images, which have the environment and dependencies all ready set up.
+```
+docker pull fx196/blimpy:py3_kern_stable
+```
+
+Here is a [more complete guide](./docker_guide.md) on using blimpy in Docker.
+
+## Command line utilities
 After installation, some command line utilities will be installed:
 * `watutil`, Read/write/plot an .h5 file or a .fil file.
 * `rawutil`, Plot data in a guppi raw file.
@@ -64,8 +102,7 @@ After installation, some command line utilities will be installed:
 
 Use the `-h` flag to any of the above command line utilities to display their available arguments.
 
-### Reading blimpy filterbank files in .fil or .h5 format
-
+## Reading blimpy filterbank files in .fil or .h5 format
 The `blimpy.Waterfall`  provides a Python API for interacting with filterbank data. It supports all BL filterbank data products; see this [example Jupyter notebook](https://github.com/UCBerkeleySETI/blimpy/blob/master/examples/voyager.ipynb) for an overview.
 
 From the python, ipython or jupiter notebook environments.
@@ -78,7 +115,7 @@ fb.info()
 data = fb.data
 ```
 
-### Reading guppi raw files
+## Reading guppi raw files
 The [Guppi Raw format](https://github.com/UCBerkeleySETI/breakthrough/blob/master/doc/RAW-File-Format.md) can be read using the `GuppiRaw` class from `guppi.py`:
 
 ```python
@@ -100,16 +137,10 @@ for header, data_x, data_y in gr.get_data():
 
 Note: most users should start analysis with filterbank files, which are smaller in size and have been generated from the guppi raw files.
 
-### Using blimpy inside Docker
-The blimpy images are pushed to a public repository after each successful build on Travis.
-If you have Docker installed, you can run the following commands to pull our images, which have the environment and dependencies set up for you.
+## Further reading
+A detailed overview of the data formats used in Breakthrough Listen can be found in our [data format paper](https://ui.adsabs.harvard.edu/abs/2019arXiv190607391L/abstract). 
 
-`docker pull fx196/blimpy:py3_kern_stable`
+## Data archive
+An archive of data files from the Breakthrough Listen program is provided at [seti.berkeley.edu/opendata](http://seti.berkeley.edu/opendata).
 
-Here is a [more complete guide](./docker_guide.md) on using blimpy in Docker.
-
-### Further reading
-
-A detailed overview of the data formats used in Breakthrough Listen can be found in our [data format paper](https://ui.adsabs.harvard.edu/abs/2019arXiv190607391L/abstract). An archive of data files from the Breakthrough Listen program is provided at [seti.berkeley.edu/opendata](http://seti.berkeley.edu/opendata).
-
-### If you have any requests or questions, please lets us know!
+## If you have any requests or questions, please lets us know!
