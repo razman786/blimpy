@@ -6,7 +6,7 @@
 # Breakthrough Listen I/O Methods for Python
 
 ## Introduction
-This README file details the installation instructions for Breakthrough Listen I/O Methods for Python (blimpy). Developers should also read [CODE_OF_CONDUCT](https://github.com/UCBerkeleySETI/blimpy/blob/master/CODE_OF_CONDUCT.md) and [CONTRIBUTING](https://github.com/UCBerkeleySETI/blimpy/blob/master/CONTRIBUTING.md).
+This README file details the installation instructions for Breakthrough Listen I/O Methods for Python (blimpy). Developers should also read [CODE_OF_CONDUCT](./CODE_OF_CONDUCT.md) and [CONTRIBUTING](./CONTRIBUTING.md).
 
 ### Filterbank + Raw file readers
 This repository contains Python 2/3 readers for interacting with [Sigproc filterbank](http://sigproc.sourceforge.net/sigproc.pdf) (.fil), HDF5 (.h5) and [guppi raw](https://baseband.readthedocs.io/en/stable/guppi/) (.raw) files, as used in the [Breakthrough Listen](https://seti.berkeley.edu) search for intelligent life.
@@ -14,7 +14,7 @@ This repository contains Python 2/3 readers for interacting with [Sigproc filter
 ## Installation
 
 ### System Dependencies
-The installation can fail if a system dependency is not installed. Please refer to the [dependencies.txt](https://github.com/UCBerkeleySETI/blimpy/blob/master/dependencies.txt) file for a list of system dependencies.
+The installation can fail if a system dependency is not installed. Please refer to the [dependencies.txt](./dependencies.txt) file for a list of system dependencies.
 
 #### Debian/Ubuntu
 For Debian/Ubuntu systems, make sure that `curl` installed and you have `sudo` access. Install the required system dependencies with the follwoing command:
