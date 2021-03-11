@@ -25,7 +25,7 @@ curl https://raw.githubusercontent.com/UCBerkeleySETI/blimpy/master/dependencies
 ### Python Dependencies
 blimpy requires `numpy`, `h5py`, `astropy`, `scipy`, `hdf5plugin`and `matplotlib` packages and will attempt to automatically install them.
 
-Please note when undertaking an installation h5py generally needs to be installed using the following:
+Please note when undertaking an installation of h5py, it generally needs to be installed using the following:
 ```
 $ python3 -m pip install --no-binary=h5py h5py
 ```
@@ -49,7 +49,7 @@ python3 -m pip install -U git+https://github.com/UCBerkeleySETI/blimpy
 ```
 
 ### Developer Installation
-The latest version of the development code can be installed from cloning the github [repo](https://github.com/UCBerkeleySETI/blimpy) and then run:
+The latest version of the development code can be installed by cloning the github [repo](https://github.com/UCBerkeleySETI/blimpy) and then run:
 
 #### User based installation
 ```
