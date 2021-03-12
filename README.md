@@ -141,6 +141,6 @@ Note: most users should start analysis with filterbank files, which are smaller 
 A detailed overview of the data formats used in Breakthrough Listen can be found in our [data format paper](https://ui.adsabs.harvard.edu/abs/2019arXiv190607391L/abstract). 
 
 ## Data archive
-An archive of data files from the Breakthrough Listen program is provided at [seti.berkeley.edu/opendata](http://seti.berkeley.edu/opendata).
+An archive of data files from the Breakthrough Listen program are provided at [seti.berkeley.edu/opendata](http://seti.berkeley.edu/opendata).
 
 ## If you have any requests or questions, please lets us know!
