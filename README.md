@@ -17,7 +17,7 @@ This repository contains Python 2/3 readers for interacting with [Sigproc filter
 The installation can fail if a system dependency is not installed. Please refer to the [dependencies.txt](./dependencies.txt) file for a list of system dependencies.
 
 #### Debian/Ubuntu
-For Debian/Ubuntu systems, make sure that `curl` installed and you have `sudo` access. Install the required system dependencies with the follwoing command:
+For Debian/Ubuntu systems, make sure that `curl` installed and you have `sudo` access. Install the required system dependencies with the following command:
 ```
 curl https://raw.githubusercontent.com/UCBerkeleySETI/blimpy/master/dependencies.txt | xargs -n 1 sudo apt install --no-install-recommends -y
 ```
@@ -25,7 +25,7 @@ curl https://raw.githubusercontent.com/UCBerkeleySETI/blimpy/master/dependencies
 ### Python Dependencies
 blimpy requires `numpy`, `h5py`, `astropy`, `scipy`, `hdf5plugin`and `matplotlib` packages and will attempt to automatically install them.
 
-Please note when undertaking an installation of h5py, it generally needs to be installed using the following:
+Please note, when undertaking an installation of h5py it generally needs to be installed using the following:
 ```
 $ python3 -m pip install --no-binary=h5py h5py
 ```
@@ -49,7 +49,7 @@ python3 -m pip install -U git+https://github.com/UCBerkeleySETI/blimpy
 ```
 
 ### Developer Installation
-The latest version of the development code can be installed by cloning the github [repo](https://github.com/UCBerkeleySETI/blimpy) and then run:
+The latest version of the development code can be installed by cloning the Github [repo](https://github.com/UCBerkeleySETI/blimpy) and running:
 
 #### User based installation
 ```
@@ -67,7 +67,7 @@ python3 -m pip install -U https://github.com/UCBerkeleySETI/blimpy/tarball/maste
 ```
 
 ### Unit tests
-To install packages needed to run the unit tests, use the following:
+To install the packages needed to run the unit tests, use the following:
 
 #### User based installation
 ```
