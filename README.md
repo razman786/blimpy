@@ -17,7 +17,7 @@ This repository contains Python 2/3 readers for interacting with [Sigproc filter
 The installation can fail if a system dependency is not installed. Please refer to the [dependencies.txt](./dependencies.txt) file for a list of system dependencies.
 
 #### Debian/Ubuntu
-For Debian/Ubuntu systems, make sure that `curl` installed and you have `sudo` access. Install the required system dependencies with the following command:
+For Debian/Ubuntu systems, make sure that `curl` is installed and you have `sudo` access. Install the required system dependencies with the following command:
 ```
 curl https://raw.githubusercontent.com/UCBerkeleySETI/blimpy/master/dependencies.txt | xargs -n 1 sudo apt install --no-install-recommends -y
 ```
@@ -27,7 +27,7 @@ blimpy requires `numpy`, `h5py`, `astropy`, `scipy`, `hdf5plugin`and `matplotlib
 
 Please note, when undertaking an installation of h5py it generally needs to be installed using the following:
 ```
-$ python3 -m pip install --no-binary=h5py h5py
+python3 -m pip install --no-binary=h5py h5py
 ```
 
 ### PyPI Installation
