@@ -71,8 +71,9 @@ To install packages needed to run the unit tests, use the following:
 
 #### User based installation
 ```
-python3 -m pip install --user --no-use-pep517 -e '.[full]'
+python3 -m pip install --user -e '.[full]'
 ```
+If errors are encounted add the `--no-use-pep517` option to the command above.
 
 #### System wide installation
 ```
