@@ -15,10 +15,10 @@ fi
 if [ `id -u` -eq 0 ]
 then
         echo "------ Installing coverage, codecov and pyyaml packages system wide ------"
-        pip3 install coverage codecov pyyaml
+        pip3 install coverage codecov pyyaml pytest pySLALIB
 else
         echo "------ Installing coverage, codecov and pyyaml packages as a user ------"
-        pip3 install coverage codecov pyyaml --user
+        pip3 install coverage codecov pyyaml pytest pySLALIB --user
 fi
 
 # Check if Git is already installed
