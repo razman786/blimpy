@@ -11,14 +11,14 @@ else
     DIR="$(dirname "$TESTDIR")"
 fi
 
-# Check if running as sudo user and install Python packages
-if [ `id -u` -eq 0 ]
+# Check if running as root or a user or within a VENV and install Python packages
+if [ `id -u` -eq 0 ] || ! [ -z "${VIRTUAL_ENV}" ]
 then
-        echo "------ Installing coverage, codecov and pyyaml packages system wide ------"
+	echo "------ Installing coverage, codecov and pyyaml packages (VENV/system wide) ------"
         pip3 install coverage codecov pyyaml pytest pySLALIB
 else
-        echo "------ Installing coverage, codecov and pyyaml packages as a user ------"
-        pip3 install coverage codecov pyyaml pytest pySLALIB --user
+	echo "------ Installing coverage, codecov, pytest, PySLALIB and pyyaml packages in (as a user) ------"
+	pip3 install coverage codecov pyyaml pytest pySLALIB --user
 fi
 
 # Check if Git is already installed
@@ -48,9 +48,9 @@ fi
 # Run blimpy setup.py
 # Check if script us running with sudo
 cd $DIR
-if [ `id -u` -eq 0 ]
+if [ `id -u` -eq 0 ]|| ! [ -z "${VIRTUAL_ENV}" ]
 then
-        echo "------ Installing blimpy (system wide) ------"
+        echo "------ Installing blimpy (VENV/system wide) ------"
         python3 setup.py install
 else
     echo "------ Installing blimpy (as a user) ------"
