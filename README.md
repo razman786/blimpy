@@ -78,6 +78,7 @@ python3 setup.py install --user
 ```
 python3 -m pip install -U https://github.com/UCBerkeleySETI/blimpy/tarball/master
 ```
+Add `--user` to the end of the above command if using a user based installation.
 
 ### Unit tests
 To install the packages needed to run the unit tests, use the following:
