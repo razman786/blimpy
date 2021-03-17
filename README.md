@@ -128,7 +128,7 @@ fb.info()
 data = fb.data
 ```
 
-## [Reading guppi raw files](#reading-guppi)
+## [Reading guppi raw files](#reading-guppi-raw-files)
 The [Guppi Raw format](https://github.com/UCBerkeleySETI/breakthrough/blob/master/doc/RAW-File-Format.md) can be read using the `GuppiRaw` class from `guppi.py`:
 
 ```python
