@@ -44,7 +44,7 @@ python3 -m pip install --no-binary=h5py h5py
 ## [blimpy Installation](#blimpy-installation)
 
 ### Virtualenv based installation
-For Virtualenv based installations please ensure you have configured a Virtualenv (i.e. `python3 -m venv my_env`) and is activated (i.e. `source my_env/bin/activate`).
+For Virtualenv based installations please ensure you have configured a Virtualenv (i.e. `python3 -m venv my_env`) and that it is activated (i.e. `source my_env/bin/activate`). Once the Virtualenv is activated, it may be necessary to execute `PATH=${PATH}:${VIRTUAL_ENV}/bin` to easily access the command line utilities.
 ```
 python3 -m pip install blimpy
 ```
