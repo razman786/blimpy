@@ -16,7 +16,7 @@ Contents of this file:
  - [Using blimpy inside Docker](#docker-install)
  - [Command line utilities](#cmd-utils)
  - [Reading blimpy filterbank files](#reading-filterbank)
- - [Reading guppi raw files](#reading-guppi)
+ - [Reading guppi raw files](#reading-guppi-raw-files)
  - [Further reading](#further-reading)
  - [Data archive](#data-archive)
 
