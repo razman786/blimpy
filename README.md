@@ -10,12 +10,12 @@ This README file details the installation instructions for Breakthrough Listen I
 
 Contents of this file:
 
- - [Dependency Installation](#dep-install)
- - [blimpy Installation](#blimpy-install)
- - [Developer Installation](#dev-install)
- - [Using blimpy inside Docker](#docker-install)
- - [Command line utilities](#cmd-utils)
- - [Reading blimpy filterbank files](#reading-filterbank)
+ - [Dependency Installation](#dependency-installtion)
+ - [blimpy Installation](#blimpy-installation)
+ - [Developer Installation](#developer-installation)
+ - [Using blimpy inside Docker](#using-blimpy-inside-docker)
+ - [Command line utilities](#command-line-utilities)
+ - [Reading blimpy filterbank files](#reading-blimpy-filterbank-files-in-fil-or-h5-format)
  - [Reading guppi raw files](#reading-guppi-raw-files)
  - [Further reading](#further-reading)
  - [Data archive](#data-archive)
@@ -23,7 +23,7 @@ Contents of this file:
 ### Filterbank + Raw file readers
 This repository contains Python 2/3 readers for interacting with [Sigproc filterbank](http://sigproc.sourceforge.net/sigproc.pdf) (.fil), HDF5 (.h5) and [guppi raw](https://baseband.readthedocs.io/en/stable/guppi/) (.raw) files, as used in the [Breakthrough Listen](https://seti.berkeley.edu) search for intelligent life.
 
-## [Dependency Installation](#dep-install)
+## [Dependency Installation](#dependency-installation)
 
 ### System Dependencies
 The installation can fail if a system dependency is not installed. Please refer to the [dependencies.txt](./dependencies.txt) file for a list of system dependencies. If not using Debian/Ubuntu please refer to your distributions install instructions.
@@ -42,7 +42,7 @@ Please note, when undertaking an installation of h5py it generally needs to be i
 python3 -m pip install --no-binary=h5py h5py
 ```
 
-## [blimpy Installation](#blimpy-install)
+## [blimpy Installation](#blimpy-installation)
 
 ### User based installation
 ```
@@ -60,7 +60,7 @@ The latest release can be installed via `pip` directly from this repository:
 python3 -m pip install -U git+https://github.com/UCBerkeleySETI/blimpy
 ```
 
-## [Developer Installation](#dev-install)
+## [Developer Installation](#developer-installation)
 The latest version of the development code can be installed by cloning the Github [repo](https://github.com/UCBerkeleySETI/blimpy) and running:
 
 ### User based installation
@@ -92,7 +92,7 @@ If errors are encounted add the `--no-use-pep517` option to the command above.
 sudo python3 -m pip install -e '.[full]'
 ```
 
-## [Using blimpy inside Docker](#docker-install)
+## [Using blimpy inside Docker](#using-blimpy-inside-docker)
 The blimpy Docker images are pushed to a public repository after each successful build on Travis.
 
 If you have Docker installed, you can run the following commands to pull our images, which have the environment and dependencies all ready set up.
@@ -102,7 +102,7 @@ docker pull fx196/blimpy:py3_kern_stable
 
 Here is a [more complete guide](./docker_guide.md) on using blimpy in Docker.
 
-## [Command line utilities](#cmd-utils)
+## [Command line utilities](#command-line-utilities)
 After installation, some command line utilities will be installed:
 * `watutil`, Read/write/plot an .h5 file or a .fil file.
 * `rawutil`, Plot data in a guppi raw file.
@@ -115,7 +115,7 @@ After installation, some command line utilities will be installed:
 
 Use the `-h` flag to any of the above command line utilities to display their available arguments.
 
-## [Reading blimpy filterbank files in .fil or .h5 format](#reading-filterbank)
+## [Reading blimpy filterbank files in .fil or .h5 format](#reading-blimpy-filterbank-files-in-fil-or-h5-format)
 The `blimpy.Waterfall`  provides a Python API for interacting with filterbank data. It supports all BL filterbank data products; see this [example Jupyter notebook](https://github.com/UCBerkeleySETI/blimpy/blob/master/examples/voyager.ipynb) for an overview.
 
 From the python, ipython or jupiter notebook environments.
