@@ -4,21 +4,21 @@
  [![JOSS status](http://joss.theoj.org/papers/e58ef21f0a924041bf9438fd75f8aed0/status.svg)](http://joss.theoj.org/papers/e58ef21f0a924041bf9438fd75f8aed0)
 
 # Breakthrough Listen I/O Methods for Python
-
-## Introduction
-This README file details the installation instructions for Breakthrough Listen I/O Methods for Python (blimpy). Developers should also read [CONTRIBUTING](./CONTRIBUTING.md).
-
-Contents of this file:
-
+ 
+ - [Introduction](#introduction)
  - [Dependency Installation](#dependency-installtion)
  - [blimpy Installation](#blimpy-installation)
  - [Developer Installation](#developer-installation)
  - [Using blimpy inside Docker](#using-blimpy-inside-docker)
  - [Command line utilities](#command-line-utilities)
- - [Reading blimpy filterbank files](#reading-blimpy-filterbank-files-in-fil-or-h5-format)
+ - [Reading blimpy filterbank files in .fil or .h5 format](#reading-blimpy-filterbank-files-in-fil-or-h5-format)
  - [Reading guppi raw files](#reading-guppi-raw-files)
  - [Further reading](#further-reading)
  - [Data archive](#data-archive)
+
+
+## [Introduction](#introduction)
+This README file details the installation instructions for Breakthrough Listen I/O Methods for Python (blimpy). Developers should also read [CONTRIBUTING](./CONTRIBUTING.md).
 
 ### Filterbank + Raw file readers
 This repository contains Python 2/3 readers for interacting with [Sigproc filterbank](http://sigproc.sourceforge.net/sigproc.pdf) (.fil), HDF5 (.h5) and [guppi raw](https://baseband.readthedocs.io/en/stable/guppi/) (.raw) files, as used in the [Breakthrough Listen](https://seti.berkeley.edu) search for intelligent life.
