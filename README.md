@@ -8,10 +8,15 @@
 ## Introduction
 This README file details the installation instructions for Breakthrough Listen I/O Methods for Python (blimpy). Developers should also read [CONTRIBUTING](./CONTRIBUTING.md).
 
+Contents of this file:
+
+ * [Dependency Installation](#dep-install)
+
+
 ### Filterbank + Raw file readers
 This repository contains Python 2/3 readers for interacting with [Sigproc filterbank](http://sigproc.sourceforge.net/sigproc.pdf) (.fil), HDF5 (.h5) and [guppi raw](https://baseband.readthedocs.io/en/stable/guppi/) (.raw) files, as used in the [Breakthrough Listen](https://seti.berkeley.edu) search for intelligent life.
 
-## Installation
+## [Dependency Installation](#dep-install)
 
 ### System Dependencies
 The installation can fail if a system dependency is not installed. Please refer to the [dependencies.txt](./dependencies.txt) file for a list of system dependencies.
@@ -30,7 +35,7 @@ Please note, when undertaking an installation of h5py it generally needs to be i
 python3 -m pip install --no-binary=h5py h5py
 ```
 
-### PyPI Installation
+### blimpy Installation
 
 #### User based installation
 ```
