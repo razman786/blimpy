@@ -10,15 +10,15 @@ This README file details the installation instructions for Breakthrough Listen I
 
 Contents of this file:
 
- * [Dependency Installation](#dep-install)
- * [blimpy Installation](#blimpy-install)
- * [Developer Installation](#dev-install)
- * [Using blimpy inside Docker](#docker-install)
- * [Command line utilities](#cmd-utils)
- * [Reading blimpy filterbank files in .fil or .h5 format](#reading-filterbank)
- * [Reading guppi raw files](#reading-guppi)
- * [Further reading](#further-reading)
- * [Data archive](#data-archive)
+ - [Dependency Installation](#dep-install)
+ - [blimpy Installation](#blimpy-install)
+ - [Developer Installation](#dev-install)
+ - [Using blimpy inside Docker](#docker-install)
+ - [Command line utilities](#cmd-utils)
+ - [Reading blimpy filterbank files](#reading-filterbank)
+ - [Reading guppi raw files](#reading-guppi)
+ - [Further reading](#further-reading)
+ - [Data archive](#data-archive)
 
 ### Filterbank + Raw file readers
 This repository contains Python 2/3 readers for interacting with [Sigproc filterbank](http://sigproc.sourceforge.net/sigproc.pdf) (.fil), HDF5 (.h5) and [guppi raw](https://baseband.readthedocs.io/en/stable/guppi/) (.raw) files, as used in the [Breakthrough Listen](https://seti.berkeley.edu) search for intelligent life.
