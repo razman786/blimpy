@@ -157,6 +157,6 @@ An archive of data files from the Breakthrough Listen program are provided at [s
 
 ## [Bugs and feature requests](#bugs-and-feature-requests)
 
-requests should be submitted using [blimpy issues](https://github.com/UCBerkeleySETI/blimpy/issues)
+Bugs and feature requests should be submitted using [blimpy issues](https://github.com/UCBerkeleySETI/blimpy/issues).
 
-## If you have any requests or questions, please lets us know!
+## If you have any feedback or questions, please lets us know!
