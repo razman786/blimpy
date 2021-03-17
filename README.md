@@ -59,6 +59,7 @@ The latest release can be installed via `pip` directly from this repository:
 ```
 python3 -m pip install -U git+https://github.com/UCBerkeleySETI/blimpy
 ```
+Add `--user` to the end of the above command if using a user based installation.
 
 ## [Developer Installation](#developer-installation)
 The latest version of the development code can be installed by cloning the Github [repo](https://github.com/UCBerkeleySETI/blimpy) and running:
